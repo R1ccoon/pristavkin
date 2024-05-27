@@ -9,3 +9,6 @@ class SignUp(CreateView):
     form_class = CreationForm
     success_url = reverse_lazy('shop:home')
     template_name = 'users/signup.html'
+
+def test(request):
+    return render(request,'users/login.html')
