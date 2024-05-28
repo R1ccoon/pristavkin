@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="../static/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon.ico">
+    <link rel="apple-touch-icon" href="{static 'img/apple-icon.png"}>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico'%}">
 
     <link rel="stylesheet" href="{% static "css/bootstrap.min.css"%}">
     <link rel="stylesheet" href="{% static "css/templatemo.css"%}">
@@ -15,7 +15,7 @@
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="../static/css/fontawesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css'%}">
 <!--
 
 
@@ -34,7 +34,7 @@
                     <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">+7(909)-570-00-32</a>
                 </div>
                 <div>
-                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/zxcdubina?igsh=MXBhZHA2bTkxYTN5MA%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="{% url 'shop:product_list' %}">
                 Pristavkin
             </a>
 
@@ -58,45 +58,30 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Главная</a>
+                            <a class="nav-link" href="{% url 'shop:product_list' %}">Главная</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">О Нас</a>
+                            <a class="nav-link" href="{% url 'shop:product_list' %}">Магазин</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop.html">Магазин</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Контакты</a>
+                            <a class="nav-link" href="{% url 'shop:product_list' %}">Контакты</a>
                         </li>
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
-                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
-                            <div class="input-group-text">
-                                <i class="fa fa-fw fa-search"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
-                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
-                    </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    <a class="nav-icon position-relative text-decoration-none" href="{% url 'cart:cart' %}">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    <a class="nav-icon position-relative text-decoration-none" href="{% url 'users:profile' %}">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+
                     </a>
                 </div>
             </div>
 
         </div>
     </nav>
-    <!-- Close Header -->
 
     <!-- Modal -->
     <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -166,11 +151,10 @@
 
  <div class="prof-container">
   <h1>Страница пользователя</h1>
-  <img src="assets/img/User-Profile-PNG-High-Quality-Image.png" alt="ava">
+  <img src="{% static 'img/profile.png'%}" alt="ava">
   </br>
   <p>Имя: {{ user.name }}</p>
   <p>Почта: {{ user.email }}</p>
-     <p>Номер телефона: {{ user.phone }} </p>
   <br>
   <a href="{% url 'users:logout' %}">
    <button>Выйти из аккаунта</button>
@@ -205,11 +189,11 @@
                                                 <a><img class="img-fluid brand-img"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/Sony-PlayStation-Transparent-Images-PNG.png" alt="Brand Logo"></a>
+                                                <a href="#"><img class="img-fluid brand-img" src="{% static 'img/Sony-PlayStation-Transparent-Images-PNG.png'%}" alt="Brand Logo"></a>
                                             </div>
 
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/Xbox_logo_(2019).svg.png" alt="Brand Logo"></a>
+                                                <a href="#"><img class="img-fluid brand-img" src="{%static 'img/Xbox_logo_(2019).svg.png'%}" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
                                                 <a><img class="img-fluid brand-img"></a>
@@ -260,12 +244,7 @@
                 </div>
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Дополнительная Информация</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Главная</a></li>
-                        <li><a class="text-decoration-none" href="#">О Нас</a></li>
-                        <li><a class="text-decoration-none" href="#">Контакты</a></li>
-                    </ul>
+
                 </div>
 
             </div>
@@ -277,7 +256,7 @@
                 <div class="col-auto me-auto">
                     <ul class="list-inline text-left footer-icons">
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/zxcdubina?igsh=MXBhZHA2bTkxYTN5MA%3D%3D&utm_source=qr"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -287,15 +266,16 @@
         <div class="w-100 py-3">
         </div>
 
+
     </footer>
     <!-- End Footer -->
 
    <!-- Start Script -->
-    <script src="../static/js/jquery-1.11.0.min.js"></script>
-    <script src="../static/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="../static/js/bootstrap.bundle.min.js"></script>
-    <script src="../static/js/templatemo.js"></script>
-    <script src="../static/js/custom.js"></script>
+    <script src="{%static 'js/jquery-1.11.0.min.js'%}"></script>
+    <script src="{%static 'js/jquery-migrate-1.2.1.min.js'%}"></script>
+    <script src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{%static 'js/templatemo.js'%}"></script>
+    <script src="{%static 'js/custom.js'%}"></script>
     <!-- End Script -->
 </body>
 
