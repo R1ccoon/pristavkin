@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop',
     'users',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -113,6 +114,9 @@ USE_I18N = True
 USE_TZ = True
 
 
+LOGIN_URL = 'users:signup'
+LOGIN_REDIRECT_URL = 'users:profile'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -121,6 +125,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 MEDIA_URL = '/media/'
+
 
 # Путь хранения картинок
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
