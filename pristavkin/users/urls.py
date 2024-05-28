@@ -1,5 +1,7 @@
-from django.contrib.auth.views import LoginView
 
+from . import views
+
+from django.contrib.auth.views import LoginView
 from .views import *
 from django.contrib import admin
 from django.urls import path, include

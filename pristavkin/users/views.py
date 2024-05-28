@@ -10,8 +10,11 @@ from django.views.generic import CreateView
 
 class SignUp(CreateView):
     form_class = CreationForm
-    success_url = reverse_lazy('users:login')
+
+    success_url = reverse_lazy('shop:home')
     template_name = 'users/signup.html'
+
+
 
 
 @login_required
@@ -20,3 +23,4 @@ def profile(request):
     Представление профиля пользователя.
     """
     return render(request, 'users/profile.html')
+
